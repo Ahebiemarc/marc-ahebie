@@ -41,7 +41,11 @@ export const portfolioData = {
     {
       title: "Application Mobile de Location Immobilière",
       description: "Développement d'une application React Native pour aider les étudiants à trouver des logements à louer en fonction de leur localisation.",
+<<<<<<< HEAD
       //videoUrl: "https://placehold.co/1920x1080/333/fff.mp4?text=Vidéo+Projet+2",
+=======
+      videoUrl: "https://placehold.co/1920x1080/333/fff.mp4?text=Vidéo+Projet+2",
+>>>>>>> 67a52055ee158b9789d6da35e3afe0a839ec84b4
       imageUrl: "https://img.freepik.com/vecteurs-libre/recherche-immobiliere-telephone-mobile_23-2148656898.jpg?semt=ais_hybrid&w=740&q=80",
       tags: ["React Native", "Géolocalisation", "Web Sockets", "Node.js", "MongoDB", "Prisma"],
       screenshots: [
@@ -64,6 +68,7 @@ export const portfolioData = {
     {
       title: "Plateforme Web de Gestion d'Événements",
       description: "Création d'une application web avec React permettant la publication d'événements et l'achat de billets en ligne.",
+<<<<<<< HEAD
       //videoUrl: "https://placehold.co/1920x1080/333/fff.mp4?text=Vidéo+Projet+3",
       imageUrl: "images/eventWebApp/1.png",
       tags: ["React", "Gestion d'événements", "Paiement en ligne", "Node.js", "MongoDB", "Tailwind CSS"],
@@ -75,10 +80,16 @@ export const portfolioData = {
         "images/eventWebApp/5.png",
         ],
       githubUrl: "https://github.com/Ahebiemarc/event_webApp",
+=======
+      videoUrl: "https://placehold.co/1920x1080/333/fff.mp4?text=Vidéo+Projet+3",
+      imageUrl: "https://placehold.co/600x400/1a1a1a/ffffff?text=Events+Web+App",
+      tags: ["React", "Gestion d'événements", "Paiement en ligne", "Node.js", "MongoDB", "Tailwind CSS"],
+>>>>>>> 67a52055ee158b9789d6da35e3afe0a839ec84b4
     },
     {
       title: "Système de Reconnaissance Faciale",
       description: "Développement d'une solution précise de détection et reconnaissance de visages avec Python, OpenCV et face_recognition.",
+<<<<<<< HEAD
       //videoUrl: "https://placehold.co/1920x1080/333/fff.mp4?text=Vidéo+Projet+4",
       imageUrl: "images/Face_recognition/fr.webp",
       tags: ["Python", "OpenCV", "IA", "Sécurité"],
@@ -94,19 +105,31 @@ export const portfolioData = {
         "images/Face_recognition/10.png",
         ],
       githubUrl: "https://github.com/Ahebiemarc/python_auth_by_face",
+=======
+      videoUrl: "https://placehold.co/1920x1080/333/fff.mp4?text=Vidéo+Projet+4",
+      imageUrl: "https://placehold.co/600x400/1a1a1a/ffffff?text=Facial+Recognition",
+      tags: ["Python", "OpenCV", "IA", "Sécurité"],
+>>>>>>> 67a52055ee158b9789d6da35e3afe0a839ec84b4
     },
     {
       title: "Modèle Anti-Spoofing",
       description: "Création d'un système d'anti-spoofing avec Python et CUDA pour prévenir les fraudes biométriques et renforcer la sécurité.",
+<<<<<<< HEAD
       //videoUrl: "https://placehold.co/1920x1080/333/fff.mp4?text=Vidéo+Projet+5",
       imageUrl: "images/anti_spoofing/1.png",
       tags: ["Python", "Deep Learning", "CUDA", "GPU"],
       githubUrl: "https://github.com/Ahebiemarc/antiSpoofing",
 
+=======
+      videoUrl: "https://placehold.co/1920x1080/333/fff.mp4?text=Vidéo+Projet+5",
+      imageUrl: "https://placehold.co/600x400/1a1a1a/ffffff?text=Anti-Spoofing",
+      tags: ["Python", "Deep Learning", "CUDA", "GPU"],
+>>>>>>> 67a52055ee158b9789d6da35e3afe0a839ec84b4
     },
     {
       title: "Application Mobile Scan2Pay",
       description: "Développement d'une application de paiement par QR code avec React Native, .NET Core et PostgreSQL.",
+<<<<<<< HEAD
       //videoUrl: "https://placehold.co/1920x1080/333/fff.mp4?text=Vidéo+Projet+6",
       imageUrl: "images/scan2pay/scpay.jpg",
       tags: ["React Native", ".NET Core", "PostgreSQL", "Paiement", "QR Code", "API REST", "Postman","Docker"],
@@ -132,6 +155,17 @@ export const portfolioData = {
         "images/scan2pay/19.jpg",
       ],
       githubUrl: "https://github.com",
+=======
+      videoUrl: "https://placehold.co/1920x1080/333/fff.mp4?text=Vidéo+Projet+6",
+      imageUrl: "https://placehold.co/600x400/1a1a1a/ffffff?text=Scan2Pay",
+      tags: ["React Native", ".NET Core", "PostgreSQL", "Paiement", "QR Code", "API REST", "Postman","Docker"],
+      screenshots: [
+        "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1331&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1564865878688-9a244444042a?q=80&w=1470&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1470&auto=format&fit=crop",
+      ],
+      githubUrl: "https://github.com"
+>>>>>>> 67a52055ee158b9789d6da35e3afe0a839ec84b4
     },
   ],
   skills: [
