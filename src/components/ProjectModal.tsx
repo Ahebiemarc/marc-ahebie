@@ -5,7 +5,6 @@ import type { Project } from "../interfaces/Idata";
 
 
 
-<<<<<<< HEAD
   // Sous-composant pour la galerie
   const ScreenshotGallery = ({ images }: { images: string[] }) => {
       const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,8 +36,6 @@ import type { Project } from "../interfaces/Idata";
 
 
 
-=======
->>>>>>> 67a52055ee158b9789d6da35e3afe0a839ec84b4
 const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => void }) => {
   const [activeView, setActiveView] = useState('video'); // 'video' ou 'screenshots'
 
@@ -60,37 +57,6 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
     return () => window.removeEventListener('keydown', handleEsc);
   }, [onClose]);
 
-<<<<<<< HEAD
-=======
-  // Sous-composant pour la galerie
-  const ScreenshotGallery = ({ images }: { images: string[] }) => {
-      const [currentIndex, setCurrentIndex] = useState(0);
-
-      const nextSlide = () => {
-          setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-      };
-
-      const prevSlide = () => {
-          setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-      };
-
-      return (
-          <div className="relative w-full h-full bg-black flex items-center justify-center">
-              <img src={images[currentIndex]} alt={`Screenshot ${currentIndex + 1}`} className="max-h-full max-w-full object-contain" />
-              {images.length > 1 && (
-                <>
-                    <button onClick={prevSlide} className="absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-opacity">
-                        &#10094;
-                    </button>
-                    <button onClick={nextSlide} className="absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-opacity">
-                        &#10095;
-                    </button>
-                </>
-              )}
-          </div>
-      );
-  };
->>>>>>> 67a52055ee158b9789d6da35e3afe0a839ec84b4
 
 
   return (
