@@ -134,7 +134,7 @@ export default function App() {
         <section id="about" ref={sectionRefs.about} className="py-20">
           <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
             <div className="md:w-1/3 text-center">
-              <img src="/public/images/profil.png" alt={portfolioData.name} className="rounded-full mx-auto shadow-lg border-4 border-cyan-500" />
+              <img src="/images/profil.png" alt={portfolioData.name} className="rounded-full mx-auto shadow-lg border-4 border-cyan-500" />
             </div>
             <div className="md:w-2/3">
               <h2 className="text-4xl font-bold mb-4 text-cyan-400">À propos de moi</h2>
