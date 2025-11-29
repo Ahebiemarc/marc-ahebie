@@ -7,7 +7,7 @@ export const portfolioData = {
   email: "ahebiemarc22@gmail.com",
   phone: "+216 58 164 490",
   location: "Monastir, Tunisie",
-  cvUrl: "./public/cv/CV_MarC.pdf", // Assurez-vous que ce fichier est dans le dossier public
+  cvUrl: "cv/CV_MarC.pdf", // Assurez-vous que ce fichier est dans le dossier public
   socials: {
     linkedin: "https://www.linkedin.com/in/atche-marc-ahebie-97b16a1a5", // À remplacer
     github: "https://github.com/Ahebiemarc",
@@ -17,7 +17,7 @@ export const portfolioData = {
     {
       title: "Application Mobile de Vote Présidentiel",
       description: "Conception et réalisation d'une application mobile sécurisée intégrant blockchain et IA pour garantir l'intégrité du processus électoral.",
-      videoUrl: "/videos/vote_app.mp4",
+      videoUrl: "videos/vote_app.mp4",
       imageUrl: "images/vote_app/VotingA.png",  
       tags: ["React Native", "Blockchain", "IA", "UML", "Smart Contracts", "Node.js"],
       screenshots: [
