@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 const AddProject = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-    const [link, setLink] = useState('');
     const [githubUrl, setGithubUrl] = useState('');
     const [tags, setTags] = useState('');
     const [image, setImage] = useState<File | null>(null);
@@ -22,7 +21,6 @@ const AddProject = () => {
         const formData = new FormData();
         formData.append('title', title);
         formData.append('description', description);
-        formData.append('link', link);
         formData.append('githubUrl', githubUrl);
         formData.append('tags', JSON.stringify(tags.split(',').map(tag => tag.trim())));
         formData.append('image', image);
@@ -33,9 +31,15 @@ const AddProject = () => {
             });
         }
 
+
+        console.log("formData : ", formData);
+
+
         try {
+            const token = localStorage.getItem("adminToken");
+            if (!token) return alert('No token found');
             await client.post('/projects', formData, {
-                headers: { 'Content-Type': 'multipart/form-data' },
+                headers: { 'Content-Type': 'multipart/form-data', 'Authorization': `Bearer ${token}` },
             });
             alert('Project added successfully!');
             navigate('/');
@@ -50,6 +54,20 @@ const AddProject = () => {
     return (
         <div className="min-h-screen bg-gray-900 text-white p-8">
             <div className="max-w-2xl mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
+                <div className="flex justify-between items-center mb-6">
+                    <button
+                        onClick={() => navigate('/messages')}
+                        className="bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded transition-colors"
+                    >
+                        Voir les messages
+                    </button>
+                    <button
+                        onClick={() => navigate('/')}
+                        className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition-colors"
+                    >
+                        Retour à l'accueil
+                    </button>
+                </div>
                 <h2 className="text-3xl font-bold mb-6 text-center">Add New Project</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
@@ -72,15 +90,7 @@ const AddProject = () => {
                         />
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label className="block mb-2 text-gray-300">Project Link</label>
-                            <input
-                                type="text"
-                                value={link}
-                                onChange={(e) => setLink(e.target.value)}
-                                className="w-full p-3 bg-gray-700 rounded border border-gray-600 focus:outline-none focus:border-blue-500"
-                            />
-                        </div>
+
                         <div>
                             <label className="block mb-2 text-gray-300">GitHub URL</label>
                             <input

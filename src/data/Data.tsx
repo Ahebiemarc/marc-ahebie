@@ -7,7 +7,7 @@ export const portfolioData = {
   email: "ahebiemarc22@gmail.com",
   phone: "+216 58 164 490",
   location: "Monastir, Tunisie",
-  cvUrl: "cv/CV_MarC.pdf", // Assurez-vous que ce fichier est dans le dossier public
+  cvUrl: "https://drive.google.com/file/d/1Yr3oD_zLA5VZV8U-WamRClNVJ1CZx2oo/preview", // Assurez-vous que ce fichier est dans le dossier public
   socials: {
     linkedin: "https://www.linkedin.com/in/atche-marc-ahebie-97b16a1a5", // À remplacer
     github: "https://github.com/Ahebiemarc",
@@ -18,7 +18,7 @@ export const portfolioData = {
       title: "Application Mobile de Vote Présidentiel",
       description: "Conception et réalisation d'une application mobile sécurisée intégrant blockchain et IA pour garantir l'intégrité du processus électoral.",
       videoUrl: "videos/vote_app.mp4",
-      imageUrl: "images/vote_app/VotingA.png",  
+      imageUrl: "images/vote_app/VotingA.png",
       tags: ["React Native", "Blockchain", "IA", "UML", "Smart Contracts", "Node.js"],
       screenshots: [
         "images/vote_app/1.png",
@@ -73,7 +73,7 @@ export const portfolioData = {
         "images/eventWebApp/3.png",
         "images/eventWebApp/4.png",
         "images/eventWebApp/5.png",
-        ],
+      ],
       githubUrl: "https://github.com/Ahebiemarc/event_webApp",
     },
     {
@@ -92,7 +92,7 @@ export const portfolioData = {
         "images/Face_recognition/7.png",
         "images/Face_recognition/9.png",
         "images/Face_recognition/10.png",
-        ],
+      ],
       githubUrl: "https://github.com/Ahebiemarc/python_auth_by_face",
     },
     {
@@ -109,7 +109,7 @@ export const portfolioData = {
       description: "Développement d'une application de paiement par QR code avec React Native, .NET Core et PostgreSQL.",
       //videoUrl: "https://placehold.co/1920x1080/333/fff.mp4?text=Vidéo+Projet+6",
       imageUrl: "images/scan2pay/scpay.jpg",
-      tags: ["React Native", ".NET Core", "PostgreSQL", "Paiement", "QR Code", "API REST", "Postman","Docker"],
+      tags: ["React Native", ".NET Core", "PostgreSQL", "Paiement", "QR Code", "API REST", "Postman", "Docker"],
       screenshots: [
         "images/scan2pay/1.png",
         "images/scan2pay/2.png",

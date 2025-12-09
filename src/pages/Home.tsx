@@ -3,11 +3,14 @@ import { Github, Linkedin, Mail, Smartphone, MapPin, Download, Send } from 'luci
 import { portfolioData } from '../data/Data';
 import SkillCard from '../components/SkillCard';
 import ProjectCard from '../components/ProjectCard';
+import client from '../api/client';
 
 // Composant principal de l'application
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home');
   const [formStatus, setFormStatus] = useState('');
+  const [projects, setProjects] = useState<any[]>([]);
+  const [loadingProjects, setLoadingProjects] = useState(true);
 
   const sectionRefs = {
     home: useRef<HTMLDivElement>(null),
@@ -39,18 +42,45 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await client.get('/projects');
+        setProjects(response.data);
+      } catch (error) {
+        console.error('Error fetching projects:', error);
+      } finally {
+        setLoadingProjects(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
   const scrollToSection = (id: keyof typeof sectionRefs) => {
     sectionRefs[id].current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus('Envoi en cours...');
-    // Simuler un appel API
-    setTimeout(() => {
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      subject: formData.get('subject') as string,
+      message: formData.get('message') as string,
+    };
+
+    try {
+      await client.post('/contacts', data);
       setFormStatus('Votre message a bien été envoyé !');
-      // e.target.reset(); // Décommenter pour vider le formulaire après envoi
-    }, 2000);
+      e.currentTarget.reset();
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setFormStatus('Erreur lors de l\'envoi du message. Veuillez réessayer.');
+    }
   };
 
   return (
@@ -109,11 +139,15 @@ export default function Home() {
         <section id="projects" ref={sectionRefs.projects} className="py-20">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-12 text-cyan-400">Mes Projets</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {portfolioData.projects.map((project, index) => (
-                <ProjectCard key={index} project={project} />
-              ))}
-            </div>
+            {loadingProjects ? (
+              <div className="text-center text-gray-400">Chargement des projets...</div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                {projects.map((project, index) => (
+                  <ProjectCard key={project.id || index} project={project} />
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
@@ -133,7 +167,7 @@ export default function Home() {
         <section id="about" ref={sectionRefs.about} className="py-20">
           <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
             <div className="md:w-1/3 text-center">
-              <img src="/images/profil.png" alt={portfolioData.name} className="rounded-full mx-auto shadow-lg border-4 border-cyan-500" />
+              <img src="https://res.cloudinary.com/dr6hkslkn/image/upload/v1764459280/portfolio-projects/pf_my5suk.png" alt={portfolioData.name} className="rounded-full mx-auto shadow-lg border-4 border-cyan-500" />
             </div>
             <div className="md:w-2/3">
               <h2 className="text-4xl font-bold mb-4 text-cyan-400">À propos de moi</h2>
